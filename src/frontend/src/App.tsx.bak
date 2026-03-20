@@ -42,15 +42,16 @@ function TeddyBear({
   message,
   isWaving = false,
   size = 120,
-  teary: _teary = false,
+  teary = false,
   position = "fixed",
 }: TeddyProps) {
   const s = size;
+  const scale = s / 160;
   return (
     <div
       style={{
         position,
-        top: position === "fixed" ? 16 : undefined,
+        bottom: position === "fixed" ? 16 : undefined,
         right: position === "fixed" ? 16 : undefined,
         zIndex: 100,
         display: "flex",
@@ -94,24 +95,126 @@ function TeddyBear({
           />
         </div>
       )}
-      <img
-        src="/assets/generated/teddy-pink-transparent-transparent.dim_400x400.png"
-        alt="fluffy pink teddy bear"
+      <svg
+        role="img"
+        aria-label="decorative illustration"
         width={s}
-        height={s}
+        height={s * 1.1}
+        viewBox="0 0 160 176"
         style={{
-          animation: isWaving
-            ? "wave 0.5s ease-in-out infinite alternate"
-            : "bob 2s ease-in-out infinite",
+          animation: isWaving ? "none" : "bob 2s ease-in-out infinite",
           cursor: "default",
-          filter: "drop-shadow(0 8px 24px rgba(180,180,200,0.5))",
-          display: "block",
         }}
-      />
+      >
+        {/* Body */}
+        <ellipse cx="80" cy="130" rx="42" ry="38" fill="#D4956A" />
+        {/* Tummy */}
+        <ellipse cx="80" cy="132" rx="26" ry="22" fill="#F0C8A0" />
+        {/* Left Arm */}
+        <ellipse
+          cx="40"
+          cy="122"
+          rx="14"
+          ry="10"
+          fill="#D4956A"
+          transform="rotate(-30 40 122)"
+        />
+        {/* Right Arm */}
+        <ellipse
+          cx="120"
+          cy="122"
+          rx="14"
+          ry="10"
+          fill="#D4956A"
+          transform="rotate(30 120 122)"
+          style={
+            isWaving
+              ? {
+                  animation: "wave 0.5s ease-in-out alternate infinite",
+                  transformOrigin: "110px 115px",
+                }
+              : {}
+          }
+        />
+        {/* Left Leg */}
+        <ellipse cx="64" cy="162" rx="13" ry="10" fill="#D4956A" />
+        {/* Right Leg */}
+        <ellipse cx="96" cy="162" rx="13" ry="10" fill="#D4956A" />
+        {/* Left Foot */}
+        <ellipse cx="60" cy="168" rx="15" ry="8" fill="#C07A50" />
+        {/* Right Foot */}
+        <ellipse cx="100" cy="168" rx="15" ry="8" fill="#C07A50" />
+        {/* Head */}
+        <circle cx="80" cy="72" r="48" fill="#D4956A" />
+        {/* Left Ear */}
+        <circle cx="40" cy="36" r="16" fill="#D4956A" />
+        <circle cx="40" cy="36" r="9" fill="#F0C8A0" />
+        {/* Right Ear */}
+        <circle cx="120" cy="36" r="16" fill="#D4956A" />
+        <circle cx="120" cy="36" r="9" fill="#F0C8A0" />
+        {/* Face */}
+        <ellipse cx="80" cy="80" rx="32" ry="28" fill="#F0C8A0" />
+        {/* Left Eye */}
+        <circle cx="66" cy="68" r="9" fill="#3D2B1F" />
+        <circle cx="68" cy="65" r="3.5" fill="white" />
+        {/* Right Eye */}
+        <circle cx="94" cy="68" r="9" fill="#3D2B1F" />
+        <circle cx="96" cy="65" r="3.5" fill="white" />
+        {/* Eye shine */}
+        <circle cx="63" cy="70" r="1.5" fill="white" opacity="0.6" />
+        <circle cx="91" cy="70" r="1.5" fill="white" opacity="0.6" />
+        {/* Nose */}
+        <ellipse cx="80" cy="80" rx="6" ry="4" fill="#8B4513" />
+        {/* Mouth */}
+        <path
+          d="M72 88 Q80 96 88 88"
+          stroke="#8B4513"
+          strokeWidth="2.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+        {/* Cheeks */}
+        <ellipse cx="58" cy="82" rx="8" ry="5" fill="#FFB3C6" opacity="0.6" />
+        <ellipse cx="102" cy="82" rx="8" ry="5" fill="#FFB3C6" opacity="0.6" />
+        {/* Party Hat */}
+        <polygon points="80,12 55,55 105,55" fill="#C9B8FF" />
+        <polygon points="80,12 55,55 70,55" fill="#FFB3C6" opacity="0.7" />
+        <polygon points="80,12 90,55 105,55" fill="#FFB3C6" opacity="0.7" />
+        <rect x="55" y="53" width="50" height="6" rx="3" fill="#FFD4B8" />
+        <polygon points="80,6 84,18 76,18" fill="#FFE066" />
+        {/* Bow Tie */}
+        <polygon points="72,108 80,113 72,118" fill="#FF6B9D" />
+        <polygon points="88,108 80,113 88,118" fill="#FF6B9D" />
+        <circle cx="80" cy="113" r="4" fill="#FF85B3" />
+        {/* Teardrop */}
+        {teary && (
+          <>
+            <ellipse
+              cx="60"
+              cy="86"
+              rx="3"
+              ry="5"
+              fill="#87CEEB"
+              opacity="0.8"
+            />
+            <ellipse
+              cx="98"
+              cy="86"
+              rx="3"
+              ry="5"
+              fill="#87CEEB"
+              opacity="0.8"
+            />
+          </>
+        )}
+        {/* Hand holding item scaled */}
+        <g transform={`scale(${scale})`} />
+      </svg>
     </div>
   );
 }
 
+/* ─────────────────────────────── PARTICLES ─────────────────────────────── */
 function FloatingHearts({ count = 10 }: { count?: number }) {
   const items = Array.from({ length: count }, (_, i) => ({
     id: `fh-${i}`,
@@ -301,7 +404,7 @@ function SceneOpening({ onNext }: { onNext: () => void }) {
             marginBottom: 12,
           }}
         >
-          It's Akanksha's Birthday ✨
+          It's Amuu's Birthday ✨
         </div>
         <div
           style={{
@@ -329,7 +432,7 @@ function SceneOpening({ onNext }: { onNext: () => void }) {
           Open Your Card 🎀
         </button>
       </div>
-      <TeddyBear message="Hiii Akanksha! I've been waiting for you! 🎉 Ready for something magical? ✨" />
+      <TeddyBear message="Hiii Amuu! I've been waiting for you! 🎉 Ready for something magical? ✨" />
     </div>
   );
 }
@@ -512,7 +615,7 @@ function SceneCake({ onNext }: { onNext: () => void }) {
         message={
           allBlown
             ? "Yay!! Your wish is on its way! 🌟💫"
-            : "Make a wish, Akanksha! 🕯️ Click the candles to blow them out! 💨"
+            : "Make a wish, Amuu! 🕯️ Click the candles to blow them out! 💨"
         }
       />
     </div>
@@ -646,7 +749,7 @@ function SceneCakeCutting({ onNext }: { onNext: () => void }) {
           Now for your gifts! 🎁
         </button>
       )}
-      <TeddyBear message="Ooooh cake time! 🍰 You deserve every sweet bite, Akanksha!" />
+      <TeddyBear message="Ooooh cake time! 🍰 You deserve every sweet bite, Amuu!" />
     </div>
   );
 }
@@ -654,9 +757,9 @@ function SceneCakeCutting({ onNext }: { onNext: () => void }) {
 /* ─────────────────────────────── SCENE 3 — GIFTS ─────────────────────────────── */
 const GIFT_MESSAGES = [
   "Why did teddy bear say no to dessert? She was already sweet enough — just like you! 🍭\n\nBut seriously... you make everyone around you sweeter just by being there. 💕",
-  "What do you call someone who lights up every room just by walking in? Akanksha. 🌸\n\nEvery day feels brighter because you exist in it. ✨",
+  "What do you call someone who lights up every room just by walking in? Amuu. 🌸\n\nEvery day feels brighter because you exist in it. ✨",
   "Why do stars shine brightest on your birthday? Because even they want to celebrate YOU! ⭐\n\nYou have no idea how much joy you bring just by being you. 🌟",
-  "If happiness had a name, it would be Akanksha. 🌈\n\nI'm so grateful the universe decided to put you in my world. 💫",
+  "If happiness had a name, it would be Amuu. 🌈\n\nI'm so grateful the universe decided to put you in my world. 💫",
 ];
 
 const GIFT_COLORS = [
@@ -871,7 +974,7 @@ const ENV_MESSAGES = [
   "Your kindness is the kind that actually changes people. You give without thinking twice, and that is so rare and so beautiful. 💛",
   "You have this rare warmth that makes everyone feel at home. People feel safe around you, and that's an incredible gift. 🌸",
   "The way you care — quietly, deeply, genuinely — is one of the most beautiful things about you. You feel everything so fully. 💙",
-  "You don't just brighten rooms, Akanksha. You brighten people's whole weeks, their whole months, sometimes their whole lives. 🌟",
+  "You don't just brighten rooms, Amuu. You brighten people's whole weeks, their whole months, sometimes their whole lives. 🌟",
 ];
 
 const ENV_COLORS = ["#FFE4EC", "#F0E4FF", "#E4F4FF", "#E4FFE4"];
@@ -969,7 +1072,7 @@ function SceneEnvelopes({ onNext }: { onNext: () => void }) {
           animation: "fadeIn 0.5s forwards",
         }}
       >
-        Letters for Akanksha 💌
+        Letters for Amuu 💌
       </div>
       <div style={{ color: "#9966cc", fontWeight: 700, marginBottom: 32 }}>
         Things I really want you to know... ✨
@@ -1166,7 +1269,7 @@ function SceneWordGame({ onNext }: { onNext: () => void }) {
               marginBottom: 20,
             }}
           >
-            See?! That's YOU, Akanksha! Every. Single. Word. 💕
+            See?! That's YOU, Amuu! Every. Single. Word. 💕
           </div>
           <button
             type="button"
@@ -1179,14 +1282,14 @@ function SceneWordGame({ onNext }: { onNext: () => void }) {
             }}
             onClick={onNext}
           >
-            Teddy has one more surprise 🧸
+            Come here for a hug! 🤗
           </button>
         </div>
       )}
       <TeddyBear
         message={
           allComplete
-            ? "See?! That's YOU, Akanksha! Every. Single. Word. 💕"
+            ? "See?! That's YOU, Amuu! Every. Single. Word. 💕"
             : "One last thing... let me spell out what you truly are! 🌟"
         }
       />
@@ -1269,8 +1372,8 @@ function SceneHug({ onNext }: { onNext: () => void }) {
         <TeddyBear
           message={
             hugged
-              ? "Squeezing you tight, Akanksha! 💕 You're the best! 🌟"
-              : "Come here, Akanksha... this one's from the heart. 🤗"
+              ? "Squeezing you tight, Amuu! 💕 You're the best! 🌟"
+              : "Come here, Amuu... this one's from the heart. 🤗"
           }
           size={180}
           position="relative"
@@ -1305,7 +1408,7 @@ function SceneConfession({ onNext }: { onNext: () => void }) {
 
   const lines = [
     {
-      text: "Akanksha…",
+      text: "Amuu…",
       style: {
         color: "white",
         fontSize: "2rem",
@@ -1340,7 +1443,7 @@ function SceneConfession({ onNext }: { onNext: () => void }) {
       },
     },
     {
-      text: "❤️ I love you, Akanksha",
+      text: "❤️ I love you, Amuu",
       style: {
         color: "#FF6B9D",
         fontSize: "clamp(2rem,5vw,3.2rem)",
@@ -1613,7 +1716,7 @@ function SceneFinale({ onRestart }: { onRestart: () => void }) {
             lineHeight: 1.2,
           }}
         >
-          Happy Birthday Akanksha! 🎂
+          Happy Birthday Amuu! 🎂
         </div>
         <div
           style={{
@@ -1640,7 +1743,7 @@ function SceneFinale({ onRestart }: { onRestart: () => void }) {
       </div>
       <div style={{ position: "fixed", bottom: 16, right: 16, zIndex: 200 }}>
         <TeddyBear
-          message="I hope this made you smile, Akanksha. You deserve all the happiness in the world. Happy Birthday! 🎉💕"
+          message="I hope this made you smile, Amuu. You deserve all the happiness in the world. Happy Birthday! 🎉💕"
           size={150}
           isWaving
           position="relative"
