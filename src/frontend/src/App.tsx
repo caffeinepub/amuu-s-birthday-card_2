@@ -20,6 +20,7 @@ const globalStyles = `
   @keyframes knifeSlice { 0%{transform:translateY(-100px) rotate(-30deg);opacity:0} 30%{opacity:1} 100%{transform:translateY(80px) rotate(-30deg);opacity:0.7} }
   @keyframes petalFall { 0%{transform:translateY(-20px) rotate(0deg) translateX(0);opacity:1} 100%{transform:translateY(110vh) rotate(360deg) translateX(60px);opacity:0} }
   @keyframes starTwinkle2 { 0%,100%{opacity:0.2;transform:scale(0.8)} 50%{opacity:0.9;transform:scale(1.2)} }
+  @keyframes sceneFade { from{opacity:0} to{opacity:1} }
   .btn-cute {
     font-family:'Nunito',sans-serif; font-weight:800; border:none; cursor:pointer;
     border-radius:9999px; padding:14px 36px; font-size:1rem; transition:all 0.2s;
@@ -1681,22 +1682,78 @@ function Footer() {
 
 /* ─────────────────────────────── APP ─────────────────────────────── */
 export default function App() {
-  const [scene, setScene] = useState(0);
+  const [_scene, setScene] = useState(0);
+  const [displayScene, setDisplayScene] = useState(0);
+  const [fading, setFading] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const next = () => setScene((s) => s + 1);
+  useEffect(() => {
+    const audio = new Audio("/assets/Jaalakaari(KoshalWorld.Com).mp3");
+    audio.loop = true;
+    audio.volume = 0;
+    audioRef.current = audio;
+    return () => {
+      audio.pause();
+      audio.src = "";
+    };
+  }, []);
+
+  const startMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio
+      .play()
+      .then(() => {
+        let vol = 0;
+        const fade = setInterval(() => {
+          vol = Math.min(vol + 0.005, 0.12);
+          audio.volume = vol;
+          if (vol >= 0.12) clearInterval(fade);
+        }, 100);
+      })
+      .catch(() => {});
+  };
+
+  const next = () => {
+    if (displayScene === 0) startMusic();
+    setFading(true);
+    setTimeout(() => {
+      setDisplayScene((s) => s + 1);
+      setScene((s) => s + 1);
+      setFading(false);
+    }, 400);
+  };
+
+  const restart = () => {
+    setFading(true);
+    setTimeout(() => {
+      setDisplayScene(0);
+      setScene(0);
+      setFading(false);
+    }, 400);
+  };
 
   return (
     <>
       <style>{globalStyles}</style>
-      {scene === 0 && <SceneOpening onNext={next} />}
-      {scene === 1 && <SceneCake onNext={next} />}
-      {scene === 2 && <SceneCakeCutting onNext={next} />}
-      {scene === 3 && <SceneGifts onNext={next} />}
-      {scene === 4 && <SceneEnvelopes onNext={next} />}
-      {scene === 5 && <SceneWordGame onNext={next} />}
-      {scene === 6 && <SceneHug onNext={next} />}
-      {scene === 7 && <SceneConfession onNext={next} />}
-      {scene === 8 && <SceneFinale onRestart={() => setScene(0)} />}
+      <div
+        key={displayScene}
+        style={{
+          animation: fading ? "none" : "sceneFade 0.6s ease-out forwards",
+          opacity: fading ? 0 : undefined,
+          transition: fading ? "opacity 0.4s ease-in" : undefined,
+        }}
+      >
+        {displayScene === 0 && <SceneOpening onNext={next} />}
+        {displayScene === 1 && <SceneCake onNext={next} />}
+        {displayScene === 2 && <SceneCakeCutting onNext={next} />}
+        {displayScene === 3 && <SceneGifts onNext={next} />}
+        {displayScene === 4 && <SceneEnvelopes onNext={next} />}
+        {displayScene === 5 && <SceneWordGame onNext={next} />}
+        {displayScene === 6 && <SceneHug onNext={next} />}
+        {displayScene === 7 && <SceneConfession onNext={next} />}
+        {displayScene === 8 && <SceneFinale onRestart={restart} />}
+      </div>
       <Footer />
     </>
   );
