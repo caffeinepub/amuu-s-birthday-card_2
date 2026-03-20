@@ -50,8 +50,9 @@ function TeddyBear({
     <div
       style={{
         position,
-        top: position === "fixed" ? 16 : undefined,
+        bottom: position === "fixed" ? 16 : undefined,
         right: position === "fixed" ? 16 : undefined,
+        pointerEvents: "none",
         zIndex: 100,
         display: "flex",
         flexDirection: "column",
