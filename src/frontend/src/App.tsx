@@ -42,7 +42,7 @@ interface TeddyProps {
 function TeddyBear({
   message,
   isWaving = false,
-  size = 120,
+  size = 72,
   teary: _teary = false,
   position = "fixed",
 }: TeddyProps) {
@@ -52,7 +52,7 @@ function TeddyBear({
       style={{
         position,
         bottom: position === "fixed" ? 16 : undefined,
-        right: position === "fixed" ? 16 : undefined,
+        right: position === "fixed" ? -5 : undefined,
         pointerEvents: "none",
         zIndex: 100,
         display: "flex",
@@ -67,9 +67,9 @@ function TeddyBear({
             background: "rgba(255,255,255,0.95)",
             border: "2px solid #FFB3C6",
             borderRadius: 18,
-            padding: "10px 14px",
-            maxWidth: 220,
-            fontSize: "0.8rem",
+            padding: "7px 11px",
+            maxWidth: 175,
+            fontSize: "0.72rem",
             fontFamily: "Nunito, sans-serif",
             fontWeight: 700,
             color: "#5a3060",
@@ -1731,7 +1731,7 @@ function SceneHug({ onNext }: { onNext: () => void }) {
               ? "Squeezing you tight, Akanksha! 💕 You're the best! 🌟"
               : "Come here, Akanksha... this one's from the heart. 🤗"
           }
-          size={180}
+          size={144}
           position="relative"
         />
       </div>
@@ -1937,7 +1937,7 @@ function SceneConfession({ onNext }: { onNext: () => void }) {
         </button>
       )}
       <div style={{ position: "absolute", bottom: 16, left: 16, zIndex: 20 }}>
-        <TeddyBear message="" size={80} teary position="relative" />
+        <TeddyBear message="" size={64} teary position="relative" />
       </div>
     </div>
   );
@@ -2251,10 +2251,10 @@ function SceneFinale({ onRestart }: { onRestart: () => void }) {
           Start Over 🔄
         </button>
       </div>
-      <div style={{ position: "fixed", bottom: 16, right: 16, zIndex: 200 }}>
+      <div style={{ position: "fixed", bottom: 16, right: -5, zIndex: 200 }}>
         <TeddyBear
           message="I hope this made you smile, Akanksha. You deserve all the happiness in the world. Happy Birthday! 🎉💕"
-          size={150}
+          size={120}
           isWaving
           position="relative"
         />
