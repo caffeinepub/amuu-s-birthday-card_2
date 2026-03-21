@@ -408,50 +408,283 @@ function SceneCake({ onNext }: { onNext: () => void }) {
             cursor: "pointer",
           }}
         >
-          {/* Bottom tier */}
-          <ellipse cx="140" cy="265" rx="100" ry="18" fill="#c8a06e" />
+          {/* === DECORATED CAKE === */}
+          {/* Bottom tier body */}
           <rect x="42" y="220" width="196" height="50" rx="8" fill="#FFB3C6" />
-          <path
-            d="M42 228 Q70 218 98 228 Q126 238 154 228 Q182 218 210 228 Q238 218 238 228"
-            stroke="white"
-            strokeWidth="4"
-            fill="none"
-            strokeLinecap="round"
+          {/* Bottom tier frosting drips */}
+          <path d="M55 220 Q58 208 61 220" fill="white" opacity="0.9" />
+          <path d="M75 220 Q79 206 83 220" fill="white" opacity="0.9" />
+          <path d="M100 220 Q104 204 108 220" fill="white" opacity="0.9" />
+          <path d="M125 220 Q129 207 133 220" fill="white" opacity="0.9" />
+          <path d="M150 220 Q154 204 158 220" fill="white" opacity="0.9" />
+          <path d="M175 220 Q179 207 183 220" fill="white" opacity="0.9" />
+          <path d="M200 220 Q204 205 208 220" fill="white" opacity="0.9" />
+          <path d="M220 220 Q223 210 226 220" fill="white" opacity="0.9" />
+          {/* Bottom tier top frosting band */}
+          <rect
+            x="42"
+            y="218"
+            width="196"
+            height="8"
+            rx="4"
+            fill="white"
+            opacity="0.7"
           />
-          {/* Middle tier */}
-          <ellipse cx="140" cy="218" rx="80" ry="14" fill="#b08040" />
+          {/* Bottom tier sprinkles */}
+          <rect
+            x="60"
+            y="232"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#FF6B9D"
+            transform="rotate(-20,64,233)"
+          />
+          <rect
+            x="85"
+            y="245"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#A78BFA"
+            transform="rotate(15,89,246)"
+          />
+          <rect
+            x="110"
+            y="235"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#34D399"
+            transform="rotate(-10,114,236)"
+          />
+          <rect
+            x="145"
+            y="248"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#FBBF24"
+            transform="rotate(25,149,249)"
+          />
+          <rect
+            x="175"
+            y="237"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#60A5FA"
+            transform="rotate(-15,179,238)"
+          />
+          <rect
+            x="200"
+            y="244"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#F472B6"
+            transform="rotate(10,204,245)"
+          />
+          <rect
+            x="72"
+            y="255"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#34D399"
+            transform="rotate(20,76,256)"
+          />
+          <rect
+            x="160"
+            y="255"
+            width="8"
+            height="3"
+            rx="1"
+            fill="#FBBF24"
+            transform="rotate(-25,164,256)"
+          />
+          {/* Bottom tier rosettes */}
+          <circle cx="95" cy="242" r="5" fill="#FF9EBC" />
+          <circle cx="88" cy="238" r="3" fill="#FFB3C6" />
+          <circle cx="102" cy="238" r="3" fill="#FFB3C6" />
+          <circle cx="95" cy="249" r="3" fill="#FFB3C6" />
+          <circle cx="185" cy="242" r="5" fill="#C4B5FD" />
+          <circle cx="178" cy="238" r="3" fill="#DDD6FE" />
+          <circle cx="192" cy="238" r="3" fill="#DDD6FE" />
+          <circle cx="185" cy="249" r="3" fill="#DDD6FE" />
+          {/* Bottom tier pearls */}
+          <circle cx="55" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="70" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="85" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="100" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="115" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="130" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="145" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="160" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="175" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="190" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="205" cy="220" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="220" cy="220" r="2.5" fill="white" opacity="0.9" />
+          {/* Bottom ellipse shadow */}
+          <ellipse cx="140" cy="270" rx="100" ry="12" fill="#c8a06e" />
+          {/* Middle tier body */}
+          <ellipse cx="140" cy="218" rx="80" ry="14" fill="#e8d0a0" />
           <rect x="62" y="178" width="156" height="44" rx="8" fill="#B8F0D8" />
-          <path
-            d="M62 185 Q85 176 108 185 Q131 194 154 185 Q177 176 200 185 Q218 176 218 185"
-            stroke="white"
-            strokeWidth="3.5"
-            fill="none"
-            strokeLinecap="round"
+          {/* Middle tier frosting drips */}
+          <path d="M72 178 Q75 168 78 178" fill="white" opacity="0.9" />
+          <path d="M95 178 Q99 165 103 178" fill="white" opacity="0.9" />
+          <path d="M120 178 Q124 164 128 178" fill="white" opacity="0.9" />
+          <path d="M148 178 Q152 165 156 178" fill="white" opacity="0.9" />
+          <path d="M173 178 Q177 167 181 178" fill="white" opacity="0.9" />
+          <path d="M200 178 Q203 169 206 178" fill="white" opacity="0.9" />
+          {/* Middle tier frosting band */}
+          <rect
+            x="62"
+            y="176"
+            width="156"
+            height="7"
+            rx="3"
+            fill="white"
+            opacity="0.7"
           />
-          {/* Top tier */}
-          <ellipse cx="140" cy="178" rx="60" ry="11" fill="#a07030" />
+          {/* Middle tier sprinkles */}
+          <rect
+            x="75"
+            y="192"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#FF6B9D"
+            transform="rotate(15,78,193)"
+          />
+          <rect
+            x="105"
+            y="200"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#A78BFA"
+            transform="rotate(-20,108,201)"
+          />
+          <rect
+            x="135"
+            y="193"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#FBBF24"
+            transform="rotate(10,138,194)"
+          />
+          <rect
+            x="165"
+            y="202"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#60A5FA"
+            transform="rotate(-15,168,203)"
+          />
+          <rect
+            x="190"
+            y="192"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#34D399"
+            transform="rotate(20,193,193)"
+          />
+          {/* Middle tier rosette */}
+          <circle cx="140" cy="198" r="6" fill="#FF9EBC" />
+          <circle cx="132" cy="193" r="3.5" fill="#FFB3C6" />
+          <circle cx="148" cy="193" r="3.5" fill="#FFB3C6" />
+          <circle cx="140" cy="206" r="3.5" fill="#FFB3C6" />
+          <circle cx="134" cy="204" r="3.5" fill="#FFB3C6" />
+          <circle cx="146" cy="204" r="3.5" fill="#FFB3C6" />
+          {/* Middle tier pearls */}
+          <circle cx="70" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="88" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="106" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="124" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="142" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="160" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="178" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="196" cy="178" r="2.5" fill="white" opacity="0.9" />
+          <circle cx="210" cy="178" r="2.5" fill="white" opacity="0.9" />
+          {/* Top tier body */}
+          <ellipse cx="140" cy="178" rx="60" ry="11" fill="#e8d0a0" />
           <rect x="82" y="144" width="116" height="36" rx="8" fill="#FFD4B8" />
-          <path
-            d="M82 150 Q100 142 118 150 Q136 158 154 150 Q172 142 190 150 Q198 142 198 150"
-            stroke="white"
-            strokeWidth="3"
-            fill="none"
-            strokeLinecap="round"
+          {/* Top tier frosting drips */}
+          <path d="M90 144 Q93 134 96 144" fill="white" opacity="0.9" />
+          <path d="M110 144 Q114 131 118 144" fill="white" opacity="0.9" />
+          <path d="M135 144 Q139 130 143 144" fill="white" opacity="0.9" />
+          <path d="M160 144 Q164 133 168 144" fill="white" opacity="0.9" />
+          <path d="M180 144 Q183 135 186 144" fill="white" opacity="0.9" />
+          {/* Top tier frosting band */}
+          <rect
+            x="82"
+            y="142"
+            width="116"
+            height="7"
+            rx="3"
+            fill="white"
+            opacity="0.7"
           />
-          {/* Stars decoration */}
-          {["100,195", "140,195", "180,195", "110,240", "170,240"].map(
-            (pos) => (
-              <text
-                key={pos}
-                x={pos.split(",")[0]}
-                y={pos.split(",")[1]}
-                fontSize="14"
-                textAnchor="middle"
-              >
-                ⭐
-              </text>
-            ),
-          )}
+          {/* Top tier sprinkles */}
+          <rect
+            x="95"
+            y="157"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#FF6B9D"
+            transform="rotate(-10,98,158)"
+          />
+          <rect
+            x="120"
+            y="163"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#A78BFA"
+            transform="rotate(20,123,164)"
+          />
+          <rect
+            x="155"
+            y="158"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#34D399"
+            transform="rotate(-15,158,159)"
+          />
+          <rect
+            x="178"
+            y="164"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#FBBF24"
+            transform="rotate(10,181,165)"
+          />
+          {/* "HB" hearts on top tier */}
+          <text
+            x="140"
+            y="167"
+            textAnchor="middle"
+            fontSize="12"
+            fill="#FF6B9D"
+            fontWeight="bold"
+          >
+            ♥ HB ♥
+          </text>
+          {/* Top tier pearls */}
+          <circle cx="90" cy="144" r="2" fill="white" opacity="0.9" />
+          <circle cx="105" cy="144" r="2" fill="white" opacity="0.9" />
+          <circle cx="120" cy="144" r="2" fill="white" opacity="0.9" />
+          <circle cx="135" cy="144" r="2" fill="white" opacity="0.9" />
+          <circle cx="150" cy="144" r="2" fill="white" opacity="0.9" />
+          <circle cx="165" cy="144" r="2" fill="white" opacity="0.9" />
+          <circle cx="180" cy="144" r="2" fill="white" opacity="0.9" />
           {/* Candles */}
           {[100, 116, 132, 148, 164].map((x, i) => (
             <g
@@ -569,8 +802,8 @@ function SceneCakeCutting({ onNext }: { onNext: () => void }) {
         <svg
           role="img"
           aria-label="decorative illustration"
-          width="40"
-          height="120"
+          width="56"
+          height="170"
           style={{
             position: "absolute",
             left: "50%",
@@ -580,9 +813,90 @@ function SceneCakeCutting({ onNext }: { onNext: () => void }) {
             zIndex: 20,
           }}
         >
-          <rect x="16" y="0" width="8" height="70" rx="2" fill="#aaa" />
-          <polygon points="12,70 28,70 22,110 18,110" fill="#ddd" />
-          <rect x="12" y="68" width="16" height="8" rx="2" fill="#8B4513" />
+          <defs>
+            <linearGradient id="bladeGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#d0d8e0" />
+              <stop offset="40%" stopColor="#f0f4f8" />
+              <stop offset="70%" stopColor="#c8d0d8" />
+              <stop offset="100%" stopColor="#909aa4" />
+            </linearGradient>
+            <linearGradient id="handleGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#4a3020" />
+              <stop offset="50%" stopColor="#7a5030" />
+              <stop offset="100%" stopColor="#4a3020" />
+            </linearGradient>
+          </defs>
+          {/* Blade — tapers to point */}
+          <polygon
+            points="18,10 38,10 36,130 22,148 20,130"
+            fill="url(#bladeGrad)"
+          />
+          {/* Blade spine highlight */}
+          <line
+            x1="38"
+            y1="10"
+            x2="36"
+            y2="130"
+            stroke="white"
+            strokeWidth="1.5"
+            opacity="0.7"
+          />
+          {/* Serrated bottom edge */}
+          <polyline
+            points="20,130 22,137 24,130 26,138 28,130 30,138 32,130 34,138 36,130"
+            fill="none"
+            stroke="#909aa4"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
+          />
+          {/* Blade tip */}
+          <polygon points="20,130 36,130 22,148" fill="#b0bcc8" />
+          {/* Bolster */}
+          <rect x="14" y="6" width="28" height="8" rx="2" fill="#9ab" />
+          {/* Handle */}
+          <rect
+            x="15"
+            y="0"
+            width="26"
+            height="10"
+            rx="4"
+            fill="url(#handleGrad)"
+          />
+          {/* Handle rivets */}
+          <circle
+            cx="22"
+            cy="5"
+            r="2.5"
+            fill="#c8a060"
+            stroke="#8a6030"
+            strokeWidth="0.8"
+          />
+          <circle
+            cx="28"
+            cy="5"
+            r="2.5"
+            fill="#c8a060"
+            stroke="#8a6030"
+            strokeWidth="0.8"
+          />
+          <circle
+            cx="34"
+            cy="5"
+            r="2.5"
+            fill="#c8a060"
+            stroke="#8a6030"
+            strokeWidth="0.8"
+          />
+          {/* Handle highlight */}
+          <rect
+            x="17"
+            y="1"
+            width="6"
+            height="8"
+            rx="3"
+            fill="white"
+            opacity="0.12"
+          />
         </svg>
         {/* Cake with cut */}
         <svg
@@ -592,16 +906,159 @@ function SceneCakeCutting({ onNext }: { onNext: () => void }) {
           height="260"
           viewBox="0 0 240 260"
         >
-          <ellipse cx="120" cy="225" rx="100" ry="12" fill="#f0e0c8" />
+          {/* Bottom tier */}
           <rect x="22" y="182" width="196" height="46" rx="8" fill="#FFB3C6" />
+          <rect
+            x="22"
+            y="180"
+            width="196"
+            height="7"
+            rx="3"
+            fill="white"
+            opacity="0.7"
+          />
+          <path d="M35 180 Q38 170 41 180" fill="white" opacity="0.9" />
+          <path d="M58 180 Q62 168 66 180" fill="white" opacity="0.9" />
+          <path d="M85 180 Q89 167 93 180" fill="white" opacity="0.9" />
+          <path d="M115 180 Q119 166 123 180" fill="white" opacity="0.9" />
+          <path d="M148 180 Q152 167 156 180" fill="white" opacity="0.9" />
+          <path d="M175 180 Q179 169 183 180" fill="white" opacity="0.9" />
+          <path d="M200 180 Q203 171 206 180" fill="white" opacity="0.9" />
+          <rect
+            x="60"
+            y="198"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#A78BFA"
+            transform="rotate(15,63,199)"
+          />
+          <rect
+            x="100"
+            y="208"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#34D399"
+            transform="rotate(-10,103,209)"
+          />
+          <rect
+            x="140"
+            y="200"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#FBBF24"
+            transform="rotate(20,143,201)"
+          />
+          <rect
+            x="175"
+            y="207"
+            width="7"
+            height="3"
+            rx="1"
+            fill="#60A5FA"
+            transform="rotate(-15,178,208)"
+          />
+          <circle cx="80" cy="202" r="4" fill="#FF9EBC" />
+          <circle cx="74" cy="198" r="2.5" fill="#FFB3C6" />
+          <circle cx="86" cy="198" r="2.5" fill="#FFB3C6" />
+          <circle cx="80" cy="208" r="2.5" fill="#FFB3C6" />
+          <circle cx="165" cy="202" r="4" fill="#C4B5FD" />
+          <circle cx="159" cy="198" r="2.5" fill="#DDD6FE" />
+          <circle cx="171" cy="198" r="2.5" fill="#DDD6FE" />
+          <circle cx="165" cy="208" r="2.5" fill="#DDD6FE" />
+          {/* Middle tier */}
           <rect x="42" y="150" width="156" height="36" rx="8" fill="#B8F0D8" />
+          <rect
+            x="42"
+            y="148"
+            width="156"
+            height="7"
+            rx="3"
+            fill="white"
+            opacity="0.7"
+          />
+          <path d="M52 148 Q56 138 60 148" fill="white" opacity="0.9" />
+          <path d="M78 148 Q82 136 86 148" fill="white" opacity="0.9" />
+          <path d="M108 148 Q112 135 116 148" fill="white" opacity="0.9" />
+          <path d="M140 148 Q144 136 148 148" fill="white" opacity="0.9" />
+          <path d="M168 148 Q172 137 176 148" fill="white" opacity="0.9" />
+          <path d="M188 148 Q191 139 194 148" fill="white" opacity="0.9" />
+          <rect
+            x="65"
+            y="163"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#FF6B9D"
+            transform="rotate(-10,68,164)"
+          />
+          <rect
+            x="100"
+            y="170"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#FBBF24"
+            transform="rotate(15,103,171)"
+          />
+          <rect
+            x="152"
+            y="164"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#A78BFA"
+            transform="rotate(-20,155,165)"
+          />
+          <rect
+            x="180"
+            y="170"
+            width="6"
+            height="2.5"
+            rx="1"
+            fill="#34D399"
+            transform="rotate(10,183,171)"
+          />
+          <circle cx="120" cy="167" r="5" fill="#FF9EBC" />
+          <circle cx="113" cy="163" r="3" fill="#FFB3C6" />
+          <circle cx="127" cy="163" r="3" fill="#FFB3C6" />
+          <circle cx="120" cy="174" r="3" fill="#FFB3C6" />
+          {/* Top tier */}
           <rect x="62" y="124" width="116" height="30" rx="8" fill="#FFD4B8" />
+          <rect
+            x="62"
+            y="122"
+            width="116"
+            height="6"
+            rx="3"
+            fill="white"
+            opacity="0.7"
+          />
+          <path d="M72 122 Q75 113 78 122" fill="white" opacity="0.9" />
+          <path d="M95 122 Q99 110 103 122" fill="white" opacity="0.9" />
+          <path d="M122 122 Q126 109 130 122" fill="white" opacity="0.9" />
+          <path d="M150 122 Q154 112 158 122" fill="white" opacity="0.9" />
+          <path d="M168 122 Q171 114 174 122" fill="white" opacity="0.9" />
+          <text
+            x="120"
+            y="143"
+            textAnchor="middle"
+            fontSize="11"
+            fill="#FF6B9D"
+            fontWeight="bold"
+          >
+            ♥ HB ♥
+          </text>
+          {/* Plate */}
+          <ellipse cx="120" cy="228" rx="108" ry="12" fill="#f0e0c8" />
           {/* Cut line */}
           <line
             x1="120"
-            y1="120"
+            y1="118"
             x2="120"
-            y2="228"
+            y2="230"
             stroke="#c8a06e"
             strokeWidth="3"
             strokeDasharray="4"
@@ -1495,41 +1952,120 @@ interface Particle {
   life: number;
   maxLife: number;
   color: string;
+  colorEnd: string;
   size: number;
+  trail: { x: number; y: number }[];
+  type: "spark" | "trail";
+  burstType: "radial" | "chrysanthemum" | "willow";
+  angle: number;
 }
+
+interface Rocket {
+  x: number;
+  y: number;
+  vy: number;
+  targetY: number;
+  trail: { x: number; y: number }[];
+  exploded: boolean;
+}
+
+const FIREWORK_COLORS: [string, string][] = [
+  ["#FFD700", "#FF8800"],
+  ["#FFFFFF", "#FFD700"],
+  ["#FF2244", "#FF8800"],
+  ["#44AAFF", "#FFFFFF"],
+  ["#FF44FF", "#FF2244"],
+  ["#88FF44", "#FFD700"],
+  ["#FF8800", "#FFD700"],
+];
 
 function FireworksCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
+  const rocketsRef = useRef<Rocket[]>([]);
   const animRef = useRef<number>(0);
-  const colors = [
-    "#FFB3C6",
-    "#C9B8FF",
-    "#B8F0D8",
-    "#FFD4B8",
-    "#FFE066",
-    "#FF6B9D",
-    "#8B7CF7",
-  ];
 
-  const launch = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const x = Math.random() * canvas.width;
-    const y = canvas.height * (0.2 + Math.random() * 0.4);
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    for (let i = 0; i < 50; i++) {
-      const angle = (Math.PI * 2 * i) / 50;
-      const speed = 2 + Math.random() * 4;
+  const explodeAt = useCallback((x: number, y: number) => {
+    const palette =
+      FIREWORK_COLORS[Math.floor(Math.random() * FIREWORK_COLORS.length)];
+    const burstTypes: ("radial" | "chrysanthemum" | "willow")[] = [
+      "radial",
+      "radial",
+      "chrysanthemum",
+      "willow",
+    ];
+    const burstType = burstTypes[Math.floor(Math.random() * burstTypes.length)];
+    const count = 80 + Math.floor(Math.random() * 41);
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.15;
+      let speed = 3 + Math.random() * 5;
+      let vx = Math.cos(angle) * speed;
+      let vy = Math.sin(angle) * speed;
+      if (burstType === "willow") {
+        vy = Math.abs(vy) * -1.2 - Math.random() * 2;
+      }
+      const colorIdx = Math.random() > 0.4 ? 0 : 1;
+      particlesRef.current.push({
+        x,
+        y,
+        vx,
+        vy,
+        life: 1,
+        maxLife: 55 + Math.random() * 50,
+        color: palette[colorIdx],
+        colorEnd: palette[1 - colorIdx],
+        size: 1.5 + Math.random() * 2,
+        trail: [],
+        type: "spark",
+        burstType,
+        angle,
+      });
+    }
+    // glitter sparks
+    for (let i = 0; i < 20; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 1 + Math.random() * 3;
       particlesRef.current.push({
         x,
         y,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         life: 1,
-        maxLife: 60 + Math.random() * 40,
-        color,
-        size: 2 + Math.random() * 3,
+        maxLife: 30 + Math.random() * 20,
+        color: "#FFFFFF",
+        colorEnd: palette[0],
+        size: 1,
+        trail: [],
+        type: "trail",
+        burstType: "radial",
+        angle,
+      });
+    }
+  }, []);
+
+  const launchRocket = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const x = canvas.width * (0.15 + Math.random() * 0.7);
+    const targetY = canvas.height * (0.1 + Math.random() * 0.35);
+    rocketsRef.current.push({
+      x,
+      y: canvas.height + 10,
+      vy: -(12 + Math.random() * 6),
+      targetY,
+      trail: [],
+      exploded: false,
+    });
+    if (Math.random() < 0.35) {
+      const x2 = canvas.width * (0.15 + Math.random() * 0.7);
+      const targetY2 = canvas.height * (0.1 + Math.random() * 0.35);
+      rocketsRef.current.push({
+        x: x2,
+        y: canvas.height + 10,
+        vy: -(12 + Math.random() * 6),
+        targetY: targetY2,
+        trail: [],
+        exploded: false,
       });
     }
   }, []);
@@ -1547,24 +2083,99 @@ function FireworksCanvas() {
     resize();
     window.addEventListener("resize", resize);
 
-    launch();
-    const interval = setInterval(launch, 1200);
+    launchRocket();
+    const interval = setInterval(launchRocket, 800);
 
     const animate = () => {
-      ctx.fillStyle = "rgba(10,0,21,0.18)";
+      ctx.fillStyle = "rgba(5,0,15,0.20)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Update & draw rockets
+      rocketsRef.current = rocketsRef.current.filter((r) => !r.exploded);
+      for (const r of rocketsRef.current) {
+        r.trail.push({ x: r.x, y: r.y });
+        if (r.trail.length > 12) r.trail.shift();
+        r.y += r.vy;
+        r.vy += 0.25;
+
+        // Draw rocket trail
+        for (let i = 1; i < r.trail.length; i++) {
+          const t = i / r.trail.length;
+          ctx.globalAlpha = t * 0.9;
+          ctx.strokeStyle = `hsl(${40 + t * 20}, 100%, ${60 + t * 30}%)`;
+          ctx.lineWidth = t * 2.5;
+          ctx.beginPath();
+          ctx.moveTo(r.trail[i - 1].x, r.trail[i - 1].y);
+          ctx.lineTo(r.trail[i].x, r.trail[i].y);
+          ctx.stroke();
+        }
+        // Draw rocket head glow
+        ctx.globalAlpha = 1;
+        const grad = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, 5);
+        grad.addColorStop(0, "#FFFFFF");
+        grad.addColorStop(0.5, "#FFD700");
+        grad.addColorStop(1, "transparent");
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (r.y <= r.targetY) {
+          r.exploded = true;
+          explodeAt(r.x, r.y);
+        }
+      }
+
+      // Update & draw particles
       particlesRef.current = particlesRef.current.filter((p) => p.life > 0);
       for (const p of particlesRef.current) {
+        p.trail.push({ x: p.x, y: p.y });
+        if (p.trail.length > 4) p.trail.shift();
+
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.05;
-        p.vx *= 0.99;
+
+        if (p.burstType === "willow") {
+          p.vy += 0.12;
+        } else if (p.burstType === "chrysanthemum") {
+          const perpAngle = p.angle + Math.PI / 2;
+          p.vx += Math.cos(perpAngle) * 0.04;
+          p.vy += Math.sin(perpAngle) * 0.04;
+          p.vy += 0.06;
+        } else {
+          p.vy += 0.08;
+        }
+        p.vx *= 0.985;
+        p.vy *= 0.985;
         p.life -= 1 / p.maxLife;
-        ctx.globalAlpha = Math.max(0, p.life);
-        ctx.fillStyle = p.color;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
+
+        const alpha = Math.max(0, p.life);
+        ctx.globalAlpha = alpha;
+
+        if (p.type === "trail" || p.trail.length < 2) {
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // Draw streak through trail
+          const start = p.trail[0];
+          const end = { x: p.x, y: p.y };
+          const grad = ctx.createLinearGradient(start.x, start.y, end.x, end.y);
+          grad.addColorStop(0, "transparent");
+          grad.addColorStop(0.4, p.colorEnd);
+          grad.addColorStop(1, p.color);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = p.size * (0.5 + p.life * 1.2);
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          ctx.moveTo(start.x, start.y);
+          for (let i = 1; i < p.trail.length; i++) {
+            ctx.lineTo(p.trail[i].x, p.trail[i].y);
+          }
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+        }
       }
       ctx.globalAlpha = 1;
       animRef.current = requestAnimationFrame(animate);
@@ -1576,7 +2187,7 @@ function FireworksCanvas() {
       clearInterval(interval);
       cancelAnimationFrame(animRef.current);
     };
-  }, [launch]);
+  }, [launchRocket, explodeAt]);
 
   return (
     <canvas
